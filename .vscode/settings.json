@@ -1,0 +1,49 @@
+{
+    "deploy": {
+         "button": {
+            "enabled": true,
+            "text": "Publish",
+
+            "packages": [ "James Consulting 1.0.0" ]
+        },
+        "packages": [
+            {
+                "name": "James Consulting 1.0.0-beta",
+                "description": "James Consulting 1.0.0-beta",
+                "exclude": [
+                    "tests/**, /.vscode/**, **/*.DS_Store"
+                ],
+                "deployOnSave": false,
+                "targets" : [  "JC Web Beta folder" ]
+            },
+            {
+                "name": "James Consulting 1.0.0",
+                "description": "James Consulting 1.0.0",
+                "exclude": [
+                    "tests/**, /.vscode/**, **/*.DS_Store"
+                ],
+                "deployOnSave": false,
+                "targets" : [  "JC Web folder" ]
+            }
+        ],
+
+        "targets": [
+            {
+                "type": "sftp",
+                "name": "JC Web Beta folder",
+                "description": "A SFTP folder",
+                "dir": "/jcweb-beta",
+                "host": "ftp.Smarterasp.net", 
+                "user": "jclogin-002", "password": "Rcrdkklt8"
+            },
+            {
+                "type": "sftp",
+                "name": "JC Web folder",
+                "description": "A SFTP folder",
+                "dir": "/jcweb",
+                "host": "ftp.Smarterasp.net", 
+                "user": "jclogin-002", "password": "Rcrdkklt8"
+            }
+        ]
+    }
+}
