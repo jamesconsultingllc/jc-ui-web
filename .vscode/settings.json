@@ -4,14 +4,14 @@
             "enabled": true,
             "text": "Publish",
 
-            "packages": [ "James Consulting 1.0.0" ]
+            "packages": [ "James Consulting 1.0.0-beta" ]
         },
         "packages": [
             {
                 "name": "James Consulting 1.0.0-beta",
                 "description": "James Consulting 1.0.0-beta",
                 "exclude": [
-                    "tests/**, /.vscode/**, **/*.DS_Store"
+                    "tests/**, .vscode/**, **/*.DS_Store, .git/**, .gitignore"
                 ],
                 "deployOnSave": false,
                 "targets" : [  "JC Web Beta folder" ]
@@ -20,7 +20,7 @@
                 "name": "James Consulting 1.0.0",
                 "description": "James Consulting 1.0.0",
                 "exclude": [
-                    "tests/**, /.vscode/**, **/*.DS_Store"
+                    "tests/**, .vscode/**, **/*.DS_Store, .git/**, .gitignore"
                 ],
                 "deployOnSave": false,
                 "targets" : [  "JC Web folder" ]
