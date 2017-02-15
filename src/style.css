@@ -1600,7 +1600,7 @@ display: flex;
 	display: inline-block;
 	margin-bottom: 0;
 	text-align: left;
-	width: 80%;
+	width: 100%;
 }
 .client-table li {
 	display: inline-block;
@@ -1648,11 +1648,15 @@ display: flex;
 	padding-right: 50px;
 	width: 100%;
 }
-.single-address h4 {
+.single-address > span {
 	color: #fafafa;
 	font-size: 22px;
 	font-weight: bold;
 	margin-bottom: 17px;
+	font-family: 'Raleway', sans-serif;
+	margin-top: 10px;
+	line-height: 1.1;
+	display: block;
 }
 .single-address p {
 	color: #fafafa;

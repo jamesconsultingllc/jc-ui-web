@@ -25,6 +25,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
+  <!-- build:css -->
   <!-- Font Awesome -->
   <link href="assets/css/font-awesome.css" rel="stylesheet">
   <!-- Bootstrap -->
@@ -35,13 +36,12 @@
   <link rel="stylesheet" type="text/css" href="assets/css/animate.css" />
   <!-- Theme color -->
   <link id="switcher" href="assets/css/theme-color/dark-red-theme.css" rel="stylesheet">
-
   <!-- Main Style -->
   <link href="style.css" rel="stylesheet">
 
-
   <!-- Fonts -->
     <link rel="stylesheet" href="assets/css/googlefonts.css" />
+    <!-- endbuild -->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -60,8 +60,8 @@
   <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
   <!-- END SCROLL TOP BUTTON -->
   <!-- Start menu section -->
-  <section id="menu-area">
-    <nav class="navbar navbar-default main-navbar" role="navigation">
+  <!--<section id="menu-area">-->
+    <nav id="menu-area" class="navbar navbar-default main-navbar">
       <div class="container">
         <div class="navbar-header">
           <!-- FOR MOBILE VIEW COLLAPSED BUTTON -->
@@ -88,16 +88,15 @@
           </ul>
         </div>
         <!--/.nav-collapse -->
-        <div class="search-area">
+        <!--<div class="search-area">
           <form action="">
             <input id="search" name="search" type="text" placeholder="What're you looking for ?">
             <input id="search_submit" value="Rechercher" type="submit">
           </form>
-        </div>
-    </nav>
+        </div>-->
     </div>
-
-  </section>
+    </nav>
+  <!--</section>-->
   <!-- End menu section -->
 
   <!-- Start about section -->
@@ -318,10 +317,11 @@
               </div>
           <div class="client-area">
             <ul class="client-table">
-              <li class="aisd"><a href="http://www.aisd.net/" target="_new"><img src="assets/images/aisd.png" alt="Arlington Independent Schoold District" /></a></li>
-              <li><a href="https://www.divinegenerationdaycare.com/" target="_new"><img src="assets/images/dgd.jpg" alt="Divine Generation Daycare" /></a></li>
-              <li><a href="http://www.hsfinancial.net/" target="_new"><img src="assets/images/hsfinancial.png" alt="H &amp; S Financial"></a></li>
-              <li><a href="http://www.dsinvestors.com/" target="_new"><img src="assets/images/dsinvestors.png" alt="D &amp; S Investors Group"></a></li>
+              <li class="aisd"><a href="http://www.aisd.net/" target="_blank"><img src="assets/images/aisd.png" alt="Arlington Independent Schoold District" /></a></li>
+              <li><a href="https://www.divinegenerationdaycare.com/" target="_blank"><img src="assets/images/dgd.jpg" alt="Divine Generation Daycare" /></a></li>
+              <li><a href="https://www.victoriousinchristchurch.org/" target="_blank"><img src="assets/images/vicc.png" alt="Victorious in Christ Church" /></a></li>
+              <li><a href="http://www.hsfinancial.net/" target="_blank"><img src="assets/images/hsfinancial.png" alt="H &amp; S Financial"></a></li>
+              <li><a href="http://www.dsinvestors.com/" target="_blank"><img src="assets/images/dsinvestors.png" alt="D &amp; S Investors Group"></a></li>
             </ul>
           </div>
         </div>
@@ -390,12 +390,12 @@
           <div class="contact-left wow fadeInLeft">
             <h2>Contact with us</h2>
             <address class="single-address">
-              <h4>Phone</h4>
-              <p>Phone Number: (214) 492 9235</p>
+              <span>Phone</span>
+              <p>Phone Number: (214) 702 1351</p>
               <p>Fax Number: (605) 546 7029</p>
             </address>
             <address class="single-address">
-              <h4>E-Mail</h4>
+              <span>E-Mail</span>
               <p><a href="mailto:info@jamesconsulting.biz?Subject=Web%20Inquiry">info@jamesconsulting.biz</a></p>
             </address>
           </div>
@@ -435,13 +435,6 @@
               <div class="g-recaptcha pull-left" data-sitekey="6LdsphQUAAAAAJ5iFzi9-XQoIjpb4DZAYD7drsdv" data-callback="recaptchaCallback"></div>
               <button type="submit" data-text="SUBMIT" class="button button-default"><span>SUBMIT</span></button>
             </form>
-
-            <!--
-            
-            
-            
-            
-            </form>-->
           </div>
         </div>
       </div>
@@ -457,10 +450,10 @@
             <div class="footer-top-area">
               <div class="footer-social">
                 <a class="footer-logo" href="#"><img src="assets/images/logo.png" alt="Logo"></a>              
-                <a class="facebook" href="https://www.facebook.com/jamesconsultingllc/" target="_new"><span class="fa fa-facebook"></span></a>
-                <a class="twitter" href="https://twitter.com/JamesConsultin2" target="_new"><span class="fa fa-twitter"></span></a>
-                <a class="google-plus" href="https://plus.google.com/b/100263189879338741918/+JamesConsultingGrandPrairie" target="_new"><span class="fa fa-google-plus"></span></a>
-                <a class="linkedin" href="https://www.linkedin.com/company/james-consulting-llc" target="_new"><span class="fa fa-linkedin"></span></a>
+                <a class="facebook" href="https://www.facebook.com/jamesconsultingllc/" target="_blank"><span class="fa fa-facebook"></span></a>
+                <a class="twitter" href="https://twitter.com/JamesConsultin2" target="_blank"><span class="fa fa-twitter"></span></a>
+                <a class="google-plus" href="https://plus.google.com/b/100263189879338741918/+JamesConsultingGrandPrairie" target="_blank"><span class="fa fa-google-plus"></span></a>
+                <a class="linkedin" href="https://www.linkedin.com/company/james-consulting-llc" target="_blank"><span class="fa fa-linkedin"></span></a>
               </div>
             </div>
           </div>
@@ -478,6 +471,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js" integrity="sha384-VoqiBWkuPrBO9LiESm+GubN/lYlsaMFUVN46L4g4k9bNmY9grTBw8AQZDrhAr7bT" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/additional-methods.min.js" integrity="sha384-o1w7pxw37NiTt84BRs3XCfa82yjBad2wzUGTYjgrNOhLu71BLfGQahXs4NyGFaRC" crossorigin="anonymous"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <!-- build:js -->
   <!-- Bootstrap -->
   <script src="assets/js/bootstrap.js"></script>
   <!-- Slick Slider -->
@@ -490,5 +484,6 @@
 
   <!-- Custom js -->
   <script type="text/javascript" src="assets/js/custom.js"></script>
+  <!-- endbuild -->
 </body>
 </html>
