@@ -33,27 +33,31 @@ gulp.task('dist', ['copy-images', 'copy-fonts', 'replace', 'js-dist', 'css']);
 
 gulp.task('replace', function(){
     gulp.src('src/*.html')
-        .pipe(sourcemaps.init())
+      //  .pipe(sourcemaps.init())
         .pipe(htmlreplace({
             'css': 'assets/css/styles.min.css',
             'js': 'assets/js/bundle.min.js'
         }))
         .pipe(htmlmin({collapseWhitespace: true, minifyCSS: true, minifyJS: true, removeScriptTypeAttributes: true, removeStyleLinkTypeAttributes: true, removeComments: true}))
-        .pipe(sourcemaps.write())
+       // .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('dist'));
+
+    gulp.src('src/web.config')
         .pipe(gulp.dest('dist'));
 });
 
 gulp.task('js-dist', function () {
-    gulp.src(['src/assets/js/bootstrap.js'
-        ,'src/assets/js/slick.js'
-        ,'src/assets/js/waypoints.js'
-        ,'src/assets/js/jquery.counterup.js'
-        , 'src/assets/js/wow.js'
-        , 'src/assets/js/custom.js'])
+    gulp.src([
+        //'src/assets/js/bootstrap.js'
+        // ,'src/assets/js/slick.js'
+        // ,'src/assets/js/waypoints.js'
+        // ,'src/assets/js/jquery.counterup.js'
+        // , 'src/assets/js/wow.js'
+         'src/assets/js/custom.js'])
         .pipe(sourcemaps.init())
         .pipe(babel())
-        .pipe(concat('bundle.min.js'))
         .pipe(uglify())
+        .pipe(concat('bundle.min.js'))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('dist/assets/js'));
 });
@@ -86,7 +90,10 @@ gulp.task('copy-images', function () {
 });
 
 gulp.task('css', function () {
-    gulp.src(['src/assets/css/font-awesome.css', 'src/assets/css/bootstrap.css','src/assets/css/slick.css', 'src/assets/css/animate.css','src/assets/css/theme-color/dark-red-theme.css', 'src/style.css'])
+    gulp.src([
+        //'src/assets/css/font-awesome.css', 'src/assets/css/bootstrap.css','src/assets/css/slick.css', 'src/assets/css/animate.css',
+        'src/assets/css/slick.css',
+        'src/assets/css/theme-color/dark-red-theme.css', 'src/style.css', 'src/assets/css/googlefonts.css'])
         .pipe(sourcemaps.init())
         // .pipe(uncss({
         //      html: ['src/*.html']
@@ -101,12 +108,8 @@ gulp.task('css', function () {
         .pipe(gulp.dest('dist/assets/css'))
         .pipe(browserSync.stream());
 
-    // gulp.src('src/assets/css/theme-color/*.css')
-    //     .pipe(autoprefixer({
-    //         browsers: ['last 2 versions']
-    //     }))
-    //     .pipe(gulp.dest('dist/assets/css/theme-color'))
-    //     .pipe(browserSync.stream());
+    gulp.src('src/assets/css/*.gif')
+        .pipe(gulp.dest('dist/assets/css'));
 });
 
 gulp.task('lint', function () {

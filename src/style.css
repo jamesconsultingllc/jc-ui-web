@@ -3192,3 +3192,6 @@ display: flex;
     display: inline-block;
     vertical-align: middle;
 }
+.slick-slide {
+outline: none !important;
+}
