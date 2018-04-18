@@ -288,9 +288,15 @@ jQuery(function ($) {
 	var $webForm = $('#insightly_web_to_lead');
 	if ($webForm.length > 0) {
 		console.log('validate');
+		$.validator.addMethod("lettersonlys", function(value, element) {
+  			return this.optional(element) || /^[a-zA-Z\s]+$/.test(value);
+		}, "Letters only please");
+
 		$webForm.validate({
 			ignore: ".ignore",
 			rules: {
+				FirstName : { lettersonlys : true },
+				LastName : { lettersonlys : true },
 				email: {
 					required: function (element) {
 						return $('#insightly_Phone').val().trim() == '';
@@ -306,8 +312,10 @@ jQuery(function ($) {
 				hiddenRecaptcha: {
 					required: function () {
 						if (grecaptcha.getResponse() == '') {
+							console.log('true');
 							return true;
 						} else {
+							console.log('false');
 							return false;
 						}
 					}
@@ -322,15 +330,3 @@ jQuery(function ($) {
 		});
 	}
 });
-
-
-
-(function (i, s, o, g, r, a, m) {
-	i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-		(i[r].q = i[r].q || []).push(arguments)
-	}, i[r].l = 1 * new Date(); a = s.createElement(o),
-		m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-ga('create', 'UA-75440407-1', 'auto');
-ga('send', 'pageview');			
