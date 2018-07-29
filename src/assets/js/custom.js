@@ -288,6 +288,13 @@ jQuery(function ($) {
 	var $webForm = $('#insightly_web_to_lead');
 	if ($webForm.length > 0) {
 		console.log('validate');
+
+		$webForm.submit(function(e){
+			if($('#txtNoValue').val() !== ''){
+				e.preventDefault();
+			}
+		});
+
 		$.validator.addMethod("lettersonlys", function(value, element) {
   			return this.optional(element) || /^[a-zA-Z\s]+$/.test(value);
 		}, "Letters only please");
