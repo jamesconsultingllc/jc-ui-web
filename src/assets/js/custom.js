@@ -292,6 +292,7 @@ jQuery(function ($) {
 		$webForm.submit(function(e){
 			if($('#txtNoValue').val() !== ''){
 				e.preventDefault();
+				return false;
 			}
 		});
 
@@ -299,11 +300,15 @@ jQuery(function ($) {
   			return this.optional(element) || /^[a-zA-Z\s]+$/.test(value);
 		}, "Letters only please");
 
+		$.validator.addMethod("differentNames", function(value, element) {
+			return !$('#insightly_lastName').val().toLowerCase().startsWith($('#insightly_firstName').val().toLowerCase());
+	  }, "Due to spam and bots, the last name must not begin with first name");
+
 		$webForm.validate({
 			ignore: ".ignore",
 			rules: {
-				FirstName : { lettersonlys : true },
-				LastName : { lettersonlys : true },
+				FirstName : { lettersonlys : true, differentNames : true },
+				LastName : { lettersonlys : true, differentNames : true },
 				email: {
 					required: function (element) {
 						return $('#insightly_Phone').val().trim() == '';
