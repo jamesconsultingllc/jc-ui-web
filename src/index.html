@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <title>Home : James Consulting</title>
-  <base href="https://www.jamesconsulting.biz" />
+  <base href="https://localhost:444/" />
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
@@ -539,36 +539,33 @@
         <div class="col-md-8 col-sm-6 col-xs-12">
           <div class="contact-right wow fadeInRight">
             <h2>Send a message</h2>
-            <form id="insightly_web_to_lead" name="insightly_web_to_lead" action="https://jamesconsulting.insight.ly/WebToLead/Create"
+            <form id="insightly_web_to_lead" name="insightly_web_to_lead"
               method="post" class="contact-form">
               <div class="form-group">
-                <input id="insightly_firstName" name="FirstName" type="text" class="form-control" placeholder="First Name (required)" required
+                <input id="insightly_firstName" name="FIRST_NAME" type="text" class="form-control" placeholder="First Name (required)" required
                 />
               </div>
               <div class="form-group">
-                <input id="insightly_lastName" name="LastName" type="text" class="form-control" placeholder="Last Name (required)" required
+                <input id="insightly_lastName" name="LAST_NAME" type="text" class="form-control" placeholder="Last Name (required)" required
                 />
               </div>
               <div class="form-group">
-                <input id="insightly_organization" name="OrganizationName" type="text" class="form-control" placeholder="Organization" />
+                <input id="insightly_organization" name="ORGANISATION_NAME" type="text" class="form-control" placeholder="Organization" />
               </div>
               <div class="form-group">
-                <input id="insightly_Title" name="Title" type="text" class="form-control" placeholder="Title/Role" />
+                <input id="insightly_Title" name="TITLE" type="text" class="form-control" placeholder="Title/Role" />
               </div>
               <div class="form-group">
-                <input id="insightly_Email" name="email" type="email" class="form-control" placeholder="Email" />
+                <input id="insightly_Email" name="EMAIL" type="email" class="form-control" placeholder="Email" />
               </div>
               <div class="form-group">
-                <input id="insightly_Phone" name="phone" type="tel" class="form-control" placeholder="Phone Number" />
+                <input id="insightly_Phone" name="PHONE" type="tel" class="form-control" placeholder="Phone Number" />
               </div>
               <div class="form-group">
-                <input id="insightly_WebSite" name="website" type="text" class="form-control" placeholder="Website" />
+                <input id="insightly_WebSite" name="Website" type="text" class="form-control" placeholder="Website" />
               </div>
               <div class="form-group">
-                <textarea id="insightly_Description" name="Description" class="form-control" placeholder="Message (required)" required></textarea>
-                <input type="hidden" name="formId" value="PHhWQjoS8kZD0TP4CjxM0w==" />
-                <input type="hidden" id="insightly_ResponsibleUser" name="ResponsibleUser" value="323832" />
-                <input type="hidden" id="insightly_LeadSource" name="LeadSource" value="1610410" />
+                <textarea id="insightly_Description" name="Message" class="form-control" placeholder="Message (required)" required></textarea>
                 <input type="hidden" class="hiddenRecaptcha required" name="hiddenRecaptcha" id="hiddenRecaptcha">
                 <input type="text" id="txtNoValue" style="position: absolute;left: -100000000px" />
               </div>
