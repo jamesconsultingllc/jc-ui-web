@@ -300,7 +300,8 @@ jQuery(function ($) {
 			delete formJson["g-recaptcha-response"];
 			delete formJson.hiddenRecaptcha;
 			console.log(formJson);
-
+			$('#preloader').show();
+			$('.loader').show();
 			$.ajax({
 				type: "POST",
 				url: 'https://localhost:44346/Insightly',
@@ -313,6 +314,8 @@ jQuery(function ($) {
 				})
 				.fail(function(data, textStatus, errorThrown ) {
 				  alert(data.responseText);
+				}).finally(function(){
+					jQuery('.loader').fadeOut();
 				});
 
 			return false;
