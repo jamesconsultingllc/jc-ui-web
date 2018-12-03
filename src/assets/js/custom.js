@@ -290,10 +290,32 @@ jQuery(function ($) {
 		console.log('validate');
 
 		$webForm.submit(function(e){
+			e.preventDefault();
+
 			if($('#txtNoValue').val() !== ''){
-				e.preventDefault();
 				return false;
 			}
+
+			var formJson = $(this).serializeFormJSON();
+			delete formJson["g-recaptcha-response"];
+			delete formJson.hiddenRecaptcha;
+			console.log(formJson);
+
+			$.ajax({
+				type: "POST",
+				url: 'https://localhost:44346/Insightly',
+				crossDomain: true,
+				data : JSON.stringify(formJson),
+				contentType: 'application/json'
+			  })
+				.done(function(data, textStatus, jqXHR) {
+				  window.location = "thankyou.html";
+				})
+				.fail(function(data, textStatus, errorThrown ) {
+				  alert(data.responseText);
+				});
+
+			return false;
 		});
 
 		$.validator.addMethod("lettersonlys", function(value, element) {
@@ -342,3 +364,22 @@ jQuery(function ($) {
 		});
 	}
 });
+
+(function ($) {
+    $.fn.serializeFormJSON = function () {
+
+        var o = {};
+        var a = this.serializeArray();
+        $.each(a, function () {
+            if (o[this.name]) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                o[this.name].push(this.value || '');
+            } else {
+                o[this.name] = this.value || '';
+            }
+        });
+        return o;
+    };
+})(jQuery);
