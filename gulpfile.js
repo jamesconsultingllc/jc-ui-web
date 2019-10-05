@@ -42,7 +42,7 @@ gulp.task('replace', function(){
        // .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('dist'));
 
-    gulp.src(['src/web.config', 'src/manifest.json', 'src/*.xml'])
+    gulp.src(['src/*.config', 'src/manifest.json', 'src/*.xml'])
         .pipe(gulp.dest('dist'));
 });
 
