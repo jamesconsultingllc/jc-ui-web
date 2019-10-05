@@ -17,7 +17,7 @@ var gulp = require('gulp'),
     htmlreplace = require('gulp-html-replace'),
     browserSync = require('browser-sync').create();
 
-gulp.task('serve', ['css'], function () {
+gulp.task('serve', ['dist'], function () {
 
     browserSync.init({
         server: "dist"

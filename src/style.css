@@ -1363,6 +1363,11 @@ display: flex;
 	width: 100%;
 	min-height: 610px;
 }
+@media only screen and (max-width: 600px) {
+	#testimonial {
+		min-height: 1000px;
+	}
+}
 .testimonial-area{
 	display: inline;
 	float: left;
